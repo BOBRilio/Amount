@@ -1,10 +1,62 @@
+import javax.swing.*;
+import java.awt.*;
 import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args){
         PaymentProcessor processor = new PaymentProcessor();
+
+
+//        Scanner scr = new Scanner(System.in);
+
+        //Окно оплаты
+        JFrame frame = new JFrame("Окно оплаты");
+        frame.setSize(500, 500);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setLocationRelativeTo(null);
+//        ImageIcon imageIcon = new ImageIcon("Foto.jpg");
+//        Image image = imageIcon.getImage();
+        //Кнопки
+        JPanel panel = new JPanel(null){
+//            @Override
+//            protected void paintComponent(Graphics g) {
+//                super.paintComponent(g);
+//                g.drawImage(image, 50, 50, getWidth(), getHeight(), this);
+//            }
+        };
+        JButton buttonUSD = new JButton("USD");
+        JButton buttonEUR = new JButton("EUR");
+        JTextField text = new JTextField("Введите сумму:");
+
+        panel.add(buttonUSD);
+        buttonUSD.setBounds(100, 300, 70, 30);
+        panel.add(buttonEUR);
+        buttonEUR.setBounds(300, 300, 70, 30);
+        //поле ввода
+
+        text.setEditable(true);        // Нельзя редактировать
+        text.setFocusable(true);       // Не получает фокус
+        text.setEnabled(true);         // Полностью отключен (становится серым)
+        panel.add(text);
+
+        text.setBounds(100, 100, 300, 30);
+        text.setBackground(Color.WHITE);
+//                panel.setBackground(new Color(70,30,200));
+        frame.add(panel);
+        frame.setVisible(true);
+
+        frame.getContentPane().setBackground(new Color(225,242,244));
+
+//        System.out.println("Введите данные платежа");
+
+
+
+
+
+
 
 
 //            Order order1 = new Order(1, 500, "USD");
